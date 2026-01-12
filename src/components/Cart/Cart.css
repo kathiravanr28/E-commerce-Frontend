@@ -1,38 +1,43 @@
 /* Cart.css */
 .cart-card {
-  border-radius: 1rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  padding: 1.5rem;
-  transition: transform 0.3s, box-shadow 0.3s;
-  background-color: #fff;
+  width: 100%;
+  max-width: 900px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
-.cart-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+.cart-card .d-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 0;
+  border-bottom: 1px solid #ddd;
 }
 
-.cart-input {
-  border-radius: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  width: 80px;
-  margin-right: 0.5rem;
-  transition: all 0.3s;
+.cart-card .d-flex:last-child {
+  border-bottom: none;
 }
 
-.cart-input:focus {
-  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
-  border-color: #0d6efd;
+.cart-card .cart-input {
+  width: 60px;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
 }
 
 .btn-remove {
-  color: #dc3545;
-  background: none;
+  background-color: #dc3545;
+  color: #fff;
   border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
   cursor: pointer;
-  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 .btn-remove:hover {
-  text-decoration: underline;
+  background-color: #a71d2a;
 }
