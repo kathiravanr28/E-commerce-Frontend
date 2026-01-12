@@ -1,7 +1,41 @@
+/* Checkout.css */
+.checkout-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  background-color: #fff;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.checkout-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
 .checkout-input {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 0.75rem;
   width: 100%;
-  padding: 8px;
-  margin-bottom: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  transition: all 0.3s;
+}
+
+.checkout-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+  border-color: #0d6efd;
+}
+
+.btn-place-order {
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: #0d6efd;
+  color: #fff;
+  border: none;
+  width: 100%;
+  transition: all 0.3s;
+}
+
+.btn-place-order:hover {
+  background-color: #2563eb;
+  transform: translateY(-2px);
 }

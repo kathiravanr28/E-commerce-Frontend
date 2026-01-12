@@ -1,6 +1,38 @@
-.cart-input {
-  width: 120px;
+/* Cart.css */
+.cart-card {
+  border-radius: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 1.5rem;
+  transition: transform 0.3s, box-shadow 0.3s;
+  background-color: #fff;
 }
-.checkout-input {
-  width: 100%;
+
+.cart-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.cart-input {
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.75rem;
+  width: 80px;
+  margin-right: 0.5rem;
+  transition: all 0.3s;
+}
+
+.cart-input:focus {
+  box-shadow: 0 0 0 0.2rem rgba(13,110,253,.25);
+  border-color: #0d6efd;
+}
+
+.btn-remove {
+  color: #dc3545;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+}
+
+.btn-remove:hover {
+  text-decoration: underline;
 }

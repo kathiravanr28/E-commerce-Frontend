@@ -4,11 +4,13 @@ import Home from './pages/Home';
 import ProductList from './pages/ProductList';
 import ProductDetail from './pages/ProductDetail';
 import CartPage from './pages/CartPage';
+import './index.css'; // Global CSS
 
 const App = () => {
   return (
     <div className="bg-light min-vh-100">
       <Header />
+
       <main className="container py-4">
         <Routes>
           <Route path="/" element={<Home />} />

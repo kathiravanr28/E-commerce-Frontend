@@ -1,12 +1,13 @@
 import { Link } from 'react-router-dom';
 import { useSelector } from 'react-redux';
+import './Header.css';
 
 const Header = () => {
   const cartCount = useSelector(state => state.cart.items.length);
 
   return (
-    <header className="navbar navbar-expand-lg navbar-dark bg-primary px-3">
-      <span className="navbar-brand mb-0 h1">E-commerce Frontend</span>
+    <header className="header-navbar navbar navbar-expand-lg mb-4">
+      <span className="navbar-brand">E-commerce Frontend</span>
 
       <div className="collapse navbar-collapse">
         <ul className="navbar-nav ms-auto">
@@ -17,7 +18,9 @@ const Header = () => {
             <Link to="/products" className="nav-link">Products</Link>
           </li>
           <li className="nav-item">
-            <Link to="/cart" className="nav-link">Cart ({cartCount})</Link>
+            <Link to="/cart" className="nav-link">
+              Cart <span className="cart-count">{cartCount}</span>
+            </Link>
           </li>
         </ul>
       </div>

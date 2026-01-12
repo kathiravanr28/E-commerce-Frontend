@@ -9,12 +9,10 @@ const Cart = () => {
   const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="card p-3 mb-3">
+    <div className="card cart-card mb-3">
       <h2 className="h5 mb-3">Shopping Cart</h2>
 
-      {items.length === 0 && (
-        <p className="text-muted">Your cart is empty</p>
-      )}
+      {items.length === 0 && <p className="text-muted">Your cart is empty</p>}
 
       {items.map(item => (
         <div key={item.id} className="d-flex justify-content-between align-items-center mb-3">
@@ -32,7 +30,7 @@ const Cart = () => {
 
           <button
             onClick={() => dispatch(removeFromCart(item.id))}
-            className="btn btn-outline-danger btn-sm"
+            className="btn btn-remove btn-sm"
           >
             Remove
           </button>
