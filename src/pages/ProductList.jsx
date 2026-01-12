@@ -5,10 +5,16 @@ const ProductList = () => {
   const products = useSelector(state => state.products.list);
 
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-6 p-6">
-      {products.map(p => (
-        <ProductCard key={p.id} product={p} />
-      ))}
+    <div>
+      <h2 className="mb-4">Products</h2>
+
+      <div className="row g-3">
+        {products.map(product => (
+          <div key={product.id} className="col-12 col-sm-6 col-md-4">
+            <ProductCard product={product} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

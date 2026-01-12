@@ -5,13 +5,22 @@ const Header = () => {
   const cartCount = useSelector(state => state.cart.items.length);
 
   return (
-    <header className="flex justify-between items-center p-4 bg-blue-600 text-white">
-      <h1 className="text-xl font-bold">E-commerce Frontend</h1>
-      <nav className="space-x-4">
-        <Link to="/">Home</Link>
-        <Link to="/products">Products</Link>
-        <Link to="/cart">Cart ({cartCount})</Link>
-      </nav>
+    <header className="navbar navbar-expand-lg navbar-dark bg-primary px-3">
+      <span className="navbar-brand mb-0 h1">E-commerce Frontend</span>
+
+      <div className="collapse navbar-collapse">
+        <ul className="navbar-nav ms-auto">
+          <li className="nav-item">
+            <Link to="/" className="nav-link">Home</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/products" className="nav-link">Products</Link>
+          </li>
+          <li className="nav-item">
+            <Link to="/cart" className="nav-link">Cart ({cartCount})</Link>
+          </li>
+        </ul>
+      </div>
     </header>
   );
 };

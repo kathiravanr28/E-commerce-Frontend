@@ -4,8 +4,16 @@ import Checkout from '../components/Checkout/Checkout';
 const CartPage = () => {
   return (
     <>
-      <Cart />
-      <Checkout />
+      <h2 className="mb-4">Your Cart</h2>
+
+      <div className="row g-3">
+        <div className="col-md-6">
+          <Cart />
+        </div>
+        <div className="col-md-6">
+          <Checkout />
+        </div>
+      </div>
     </>
   );
 };

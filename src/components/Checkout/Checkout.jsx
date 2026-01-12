@@ -1,10 +1,14 @@
+import './Checkout.css';
+
 const Checkout = () => {
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-bold mb-4">Checkout</h2>
-      <input className="border p-2 w-full mb-3" placeholder="Name" />
-      <input className="border p-2 w-full mb-3" placeholder="Address" />
-      <button className="bg-green-600 text-white px-4 py-2 rounded">
+    <div className="card p-3 mb-3">
+      <h2 className="h5 mb-3">Checkout</h2>
+
+      <input className="form-control mb-3 checkout-input" placeholder="Full Name" />
+      <input className="form-control mb-3 checkout-input" placeholder="Address" />
+
+      <button className="btn btn-primary w-100">
         Place Order
       </button>
     </div>

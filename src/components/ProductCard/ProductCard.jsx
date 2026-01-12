@@ -6,21 +6,24 @@ const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
   return (
-    <div className="border p-4 rounded shadow">
-      <img src={product.image} className="h-40 w-full object-cover" />
-      <h3 className="font-semibold mt-2">{product.name}</h3>
-      <p>${product.price}</p>
+    <div className="card h-100">
+      <img src={product.image} alt={product.name} className="card-img-top" style={{ height: '200px', objectFit: 'cover' }} />
 
-      <div className="flex justify-between mt-2">
-        <Link to={`/product/${product.id}`} className="text-blue-600">
-          View
-        </Link>
-        <button
-          onClick={() => dispatch(addToCart(product))}
-          className="bg-green-600 text-white px-3 py-1 rounded"
-        >
-          Add
-        </button>
+      <div className="card-body d-flex flex-column">
+        <h5 className="card-title">{product.name}</h5>
+        <p className="card-text">${product.price}</p>
+
+        <div className="mt-auto d-flex justify-content-between align-items-center">
+          <Link to={`/product/${product.id}`} className="btn btn-link p-0">
+            View
+          </Link>
+          <button
+            onClick={() => dispatch(addToCart(product))}
+            className="btn btn-success btn-sm"
+          >
+            Add to Cart
+          </button>
+        </div>
       </div>
     </div>
   );

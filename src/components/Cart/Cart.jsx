@@ -1,38 +1,45 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { removeFromCart, updateQuantity } from '../../store/cartSlice';
+import './Cart.css';
 
 const Cart = () => {
   const items = useSelector(state => state.cart.items);
   const dispatch = useDispatch();
 
-  const total = items.reduce((sum, i) => sum + i.price * i.quantity, 0);
+  const total = items.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="p-6">
-      {items.length === 0 && <p>Cart is empty</p>}
+    <div className="card p-3 mb-3">
+      <h2 className="h5 mb-3">Shopping Cart</h2>
+
+      {items.length === 0 && (
+        <p className="text-muted">Your cart is empty</p>
+      )}
 
       {items.map(item => (
-        <div key={item.id} className="flex justify-between mb-4">
+        <div key={item.id} className="d-flex justify-content-between align-items-center mb-3">
           <span>{item.name}</span>
+
           <input
             type="number"
             min="1"
             value={item.quantity}
             onChange={e =>
-              dispatch(updateQuantity({ id: item.id, quantity: +e.target.value }))
+              dispatch(updateQuantity({ id: item.id, quantity: Number(e.target.value) }))
             }
-            className="w-16 border"
+            className="form-control cart-input"
           />
+
           <button
             onClick={() => dispatch(removeFromCart(item.id))}
-            className="text-red-600"
+            className="btn btn-outline-danger btn-sm"
           >
             Remove
           </button>
         </div>
       ))}
 
-      <h3 className="font-bold">Total: ${total.toFixed(2)}</h3>
+      <h3 className="fw-semibold mt-3">Total: ${total.toFixed(2)}</h3>
     </div>
   );
 };

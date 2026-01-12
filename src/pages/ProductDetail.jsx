@@ -10,9 +10,12 @@ const ProductDetail = () => {
   if (!product) return <p>Product not found</p>;
 
   return (
-    <div className="p-6">
-      <h2 className="text-xl font-bold">{product.name}</h2>
-      <p>${product.price}</p>
+    <div className="card mx-auto" style={{ maxWidth: '500px' }}>
+      <img src={product.image} alt={product.name} className="card-img-top" style={{ height: '300px', objectFit: 'cover' }} />
+      <div className="card-body">
+        <h2 className="card-title">{product.name}</h2>
+        <p className="card-text">${product.price}</p>
+      </div>
     </div>
   );
 };
