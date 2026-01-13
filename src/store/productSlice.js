@@ -4,9 +4,9 @@ const productSlice = createSlice({
   name: 'products',
   initialState: {
     list: [
-      { id: 1, name: 'Headphones', price: 99, image: '/headphones.jpg' },
-      { id: 2, name: 'Phone Case', price: 25, image: '/case.jpg' },
-      { id: 3, name: 'USB Cable', price: 15, image: '/cable.jpg' }
+      { id: 1, name: 'Headphones', price: 99, image: '/Headphones.webp' },
+      { id: 2, name: 'Phone Case', price: 25, image: '/phone-case.jpeg' },
+      { id: 3, name: 'USB Cable', price: 15, image: '/usb-cable.jpg' }
     ]
   },
   reducers: {}

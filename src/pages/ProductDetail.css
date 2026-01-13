@@ -1,0 +1,80 @@
+/* =========================
+   Card container animation
+   ========================= */
+.card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  text-align: center;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* =========================
+   Product Image zoom effect
+   ========================= */
+.card-img-top {
+  transition: transform 0.5s ease;
+}
+
+.card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* =========================
+   Product Title (h2)
+   ========================= */
+.card-title {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-weight: 600;
+  color: #1f2937;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 6px;
+}
+
+/* underline animation */
+.card-title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transition: width 0.4s ease;
+}
+
+.card-title:hover::after {
+  width: 100%;
+}
+
+/* =========================
+   Price text (p)
+   ========================= */
+.card-text {
+  font-family: "Inter", "Segoe UI", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #16a34a;
+  position: relative;
+  margin-top: 12px;
+}
+
+/* glow effect */
+.card-text::before {
+  content: "";
+  position: absolute;
+  left: -6px;
+  bottom: 2px;
+  width: 0%;
+  height: 80%;
+  background: rgba(34, 197, 94, 0.2);
+  z-index: -1;
+  transition: width 0.4s ease;
+}
+
+.card-text:hover::before {
+  width: 105%;
+}

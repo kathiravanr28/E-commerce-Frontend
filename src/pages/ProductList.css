@@ -1,0 +1,50 @@
+/* ProductList container */
+div:has(> .row.g-3) {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* header */
+h2.mb-4 {
+  font-family: "Poppins", "Segoe UI", sans-serif;
+  font-size: 2rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #1f2937;
+  text-align: center;
+}
+h2.mb-4 {
+  position: relative;
+  display: inline-block;
+}
+
+h2.mb-4::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb, #3b82f6);
+  transition: width 0.4s ease;
+  transform: translateX(-50%);
+}
+
+h2.mb-4:hover::after {
+  width: 100%;
+}
+
+
+/* Grid centering */
+.row.g-3 {
+  justify-content: center;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Center ProductCard inside column */
+.row.g-3 > [class^="col-"] {
+  display: flex;
+  justify-content: center;
+}

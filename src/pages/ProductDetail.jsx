@@ -1,6 +1,6 @@
 import { useParams } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-
+import "./ProductDetail.css"
 const ProductDetail = () => {
   const { id } = useParams();
   const product = useSelector(state =>
