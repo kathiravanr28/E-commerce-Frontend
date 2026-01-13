@@ -1,30 +1,26 @@
-import { Link } from 'react-router-dom';
-import { useSelector } from 'react-redux';
-import './Header.css';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const cartCount = useSelector(state => state.cart.items.length);
-
   return (
-    <header className="header-navbar navbar navbar-expand-lg mb-4">
-      <span className="navbar-brand">E-commerce Frontend</span>
-
-      <div className="collapse navbar-collapse">
-        <ul className="navbar-nav ms-auto">
-          <li className="nav-item">
-            <Link to="/" className="nav-link">Home</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/products" className="nav-link">Products</Link>
-          </li>
-          <li className="nav-item">
-            <Link to="/cart" className="nav-link">
-              Cart <span className="cart-count">{cartCount}</span>
-            </Link>
-          </li>
-        </ul>
+    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+      <div className="container">
+        <Link className="navbar-brand" to="/">My Shop</Link>
+        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav ms-auto">
+            <li className="nav-item">
+              <Link className="nav-link" to="/">Home</Link>
+            </li>
+            <li className="nav-item">
+              <Link className="nav-link" to="/cart">Cart</Link>
+            </li>
+          </ul>
+        </div>
       </div>
-    </header>
+    </nav>
   );
 };
 

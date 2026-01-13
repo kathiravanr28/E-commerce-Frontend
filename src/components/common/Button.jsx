@@ -1,7 +1,10 @@
-const Button = ({ text, onClick }) => {
+import React from "react";
+
+const Button = ({ children, onClick, type = "primary", size = "md" }) => {
+  const btnClass = `btn btn-${type} btn-${size}`;
   return (
-    <button onClick={onClick} className="btn btn-primary">
-      {text}
+    <button className={btnClass} onClick={onClick}>
+      {children}
     </button>
   );
 };

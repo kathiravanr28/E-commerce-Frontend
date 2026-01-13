@@ -1,15 +1,26 @@
-import "./Home.css"
+import React from "react";
+import ProductCard from "../components/ProductCard/ProductCard";
+import { useSelector, useDispatch } from "react-redux";
+import { addToCart } from "../store/cartSlice";
+
 const Home = () => {
+  const products = useSelector((state) => state.products.items);
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (product) => {
+    dispatch(addToCart(product));
+  };
+
   return (
-    <div className="text-center py-5">
-      <h2 className="display-5 mb-3">Welcome to E-commerce Store</h2>
-      <p className="text-muted mx-auto" style={{ maxWidth: '600px' }}>
-        Shop the best products at the best price. Explore our wide range of products
-        and enjoy a seamless shopping experience.
-      </p>
-      <a href="/products" className="btn btn-primary mt-3">
-        Browse Products
-      </a>
+    <div className="container my-4">
+      <h2 className="mb-4">Latest Products</h2>
+      <div className="row g-4">
+        {products.map((product) => (
+          <div className="col-md-4" key={product.id}>
+            <ProductCard product={product} addToCart={handleAddToCart} />
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

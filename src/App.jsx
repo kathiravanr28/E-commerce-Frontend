@@ -1,25 +1,24 @@
-import { Routes, Route } from 'react-router-dom';
-import Header from './components/Header/Header';
-import Home from './pages/Home';
-import ProductList from './pages/ProductList';
-import ProductDetail from './pages/ProductDetail';
-import CartPage from './pages/CartPage';
-import './index.css'; // Global CSS
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Header from "./components/Header/Header";
+import Home from "./pages/Home";
+import CartPage from "./pages/CartPage";
+import ProductList from "./pages/ProductList";
+import ProductDetail from "./pages/ProductDetail";
+import Checkout from "./components/Checkout/Checkout";
 
 const App = () => {
   return (
-    <div className="bg-light min-vh-100">
+    <Router>
       <Header />
-
-      <main className="container py-4">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/products" element={<ProductList />} />
-          <Route path="/product/:id" element={<ProductDetail />} />
-          <Route path="/cart" element={<CartPage />} />
-        </Routes>
-      </main>
-    </div>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/cart" element={<CartPage />} />
+        <Route path="/products" element={<ProductList />} />
+        <Route path="/products/:id" element={<ProductDetail />} />
+        <Route path="/checkout" element={<Checkout />} />
+      </Routes>
+    </Router>
   );
 };
 

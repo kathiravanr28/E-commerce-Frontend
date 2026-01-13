@@ -1,34 +1,22 @@
-import { useDispatch } from 'react-redux';
-import { addToCart } from '../../store/cartSlice';
-import { Link } from 'react-router-dom';
-import './ProductCard.css';
+// src/components/ProductCard/ProductCard.jsx
+import React from "react";
 
-const ProductCard = ({ product }) => {
-  const dispatch = useDispatch();
-
+const ProductCard = ({ product, addToCart }) => {
   return (
-    <div className="card product-card h-100">
+    <div className="card h-100">
       <img
-        src={product.image}
-        alt={product.name}
+        src={product.image} // ✅ already imported in productSlice
         className="card-img-top"
+        alt={product.name}
+        style={{ height: "200px", objectFit: "contain" }}
       />
-
-      <div className="card-body d-flex flex-column">
+      <div className="card-body">
         <h5 className="card-title">{product.name}</h5>
-        <p className="card-text">${product.price}</p>
-
-        <div className="mt-auto d-flex justify-content-between align-items-center">
-          <Link to={`/product/${product.id}`} className="btn-view">
-            View
-          </Link>
-          <button
-            onClick={() => dispatch(addToCart(product))}
-            className="btn-add"
-          >
-            Add to Cart
-          </button>
-        </div>
+        <p className="card-text">{product.description}</p>
+        <h6 className="text-primary">${product.price}</h6>
+        <button className="btn btn-primary mt-2" onClick={() => addToCart(product)}>
+          Add to Cart
+        </button>
       </div>
     </div>
   );
